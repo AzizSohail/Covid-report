@@ -1,0 +1,22 @@
+{
+	"name": "ds_cases_covid_raw_csv_http",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_http_opendata_ecdc_data",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/ecdc_data/case_deaths_uk_ind_only.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
