@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://raw.githubusercontent.com/cloudboxacademy/covid19/refs/heads/main",
+			"url": "https://raw.githubusercontent.com",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
