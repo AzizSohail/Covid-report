@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "/ecdc_data/case_deaths_uk_ind_only.csv"
+				"relativeUrl": "cloudboxacademy/covid19/main/ecdc_data/cases_deaths.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
