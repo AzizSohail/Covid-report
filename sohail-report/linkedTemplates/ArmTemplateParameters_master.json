@@ -15,7 +15,7 @@
 			"value": "https://covidreportingdlcs.dfs.core.windows.net/"
 		},
 		"ls_http_opendata_ecdc_data_properties_typeProperties_url": {
-			"value": "https://github.com/cloudboxacademy/covid19/blob/main"
+			"value": "https://raw.githubusercontent.com/"
 		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"value": "/subscriptions/2763f751-8a8b-4063-a2ab-cda10bac95a8/resourceGroups/covid-reporting-org/providers/Microsoft.Storage/storageAccounts/coazurerep"
