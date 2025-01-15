@@ -20,7 +20,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2025-01-15T17:22:00",
+				"startTime": "2025-01-15T12:35:00",
 				"endTime": "2025-01-20T17:22:00",
 				"timeZone": "Eastern Standard Time"
 			}
