@@ -23,6 +23,14 @@
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com/"
 		},
+		"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_deaths_data_parameters_sourceRelativeUrl": {
+			"type": "string",
+			"defaultValue": "/ecdc_data/hospital_admissions.csv"
+		},
+		"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_deaths_data_parameters_sinkFileName": {
+			"type": "string",
+			"defaultValue": "hospital_admissions.csv"
+		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/2763f751-8a8b-4063-a2ab-cda10bac95a8/resourceGroups/covid-reporting-org/providers/Microsoft.Storage/storageAccounts/coazurerep"
@@ -65,6 +73,12 @@
 					},
 					"ls_http_opendata_ecdc_data_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_data_properties_typeProperties_url')]"
+					},
+					"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_deaths_data_parameters_sourceRelativeUrl": {
+						"value": "[parameters('tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_deaths_data_parameters_sourceRelativeUrl')]"
+					},
+					"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_deaths_data_parameters_sinkFileName": {
+						"value": "[parameters('tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_deaths_data_parameters_sinkFileName')]"
 					},
 					"tr_ingest_population_data_properties_typeProperties_scope": {
 						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
