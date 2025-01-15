@@ -114,7 +114,7 @@
 				"variables": {
 					"sourceRelativeUrl": {
 						"type": "String",
-						"defaultValue": "cloudboxacademy/covid19/main/ecdc_data/cases_deaths.csv"
+						"defaultValue": "cloudboxacademy/covid19/main/ecdc_data/hospital_admissions.csv"
 					},
 					"sinkFileName": {
 						"type": "String",
