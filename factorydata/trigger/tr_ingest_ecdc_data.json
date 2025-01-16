@@ -1,0 +1,18 @@
+{
+	"name": "tr_ingest_ecdc_data",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2025-01-16T04:58:00",
+				"endTime": "2025-01-18T04:56:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}
