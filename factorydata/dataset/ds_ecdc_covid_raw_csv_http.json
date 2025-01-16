@@ -3,12 +3,22 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_http_opendata_ecdc_data",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"sourceBaseURL": {
+					"value": "@dataset().baseURL",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"relativeURL": {
 				"type": "string",
 				"defaultValue": "cloudboxacademy/covid19/main/ecdc_data/cases_deaths.csv"
+			},
+			"baseURL": {
+				"type": "string",
+				"defaultValue": "https://raw.githubusercontent.com/"
 			}
 		},
 		"annotations": [],
