@@ -11,6 +11,9 @@
 		"ls_blob_covidreporting_connectionString": {
 			"value": ""
 		},
+		"ls_blob_covidreporting1_connectionString": {
+			"value": ""
+		},
 		"ls_adls_ccovidreportingdl_properties_typeProperties_url": {
 			"value": "https://covidreportingdlcs.dfs.core.windows.net/"
 		},
