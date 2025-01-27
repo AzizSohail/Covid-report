@@ -40,7 +40,7 @@
 				"          indicator as string,",
 				"          date as string,",
 				"          year_week as string,",
-				"          value as double,",
+				"          value as string,",
 				"          source as string,",
 				"          url as string",
 				"     ),",
@@ -84,7 +84,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> cleanLookup",
-				"cleanLookup split(indicator== 'Weekly new hospital admission per 100k' || indicator =='Weekly new ICU admissions per 100k',",
+				"cleanLookup split(indicator== 'Weekly new hospital admissions per 100k' || indicator =='Weekly new ICU admissions per 100k',",
 				"     disjoint: false) ~> splitDailyFromWeekly@(Weekly, Daily)"
 			]
 		}
