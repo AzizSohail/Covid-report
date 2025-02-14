@@ -120,7 +120,7 @@
 				"cleanLookup split(indicator== 'Weekly new hospital admissions per 100k' || indicator =='Weekly new ICU admissions per 100k',",
 				"     disjoint: false) ~> splitDailyFromWeekly@(Weekly, Daily)",
 				"dimDate derive(ecdc_year_week = year+'-W'+lpad(week_of_year,2,'0')) ~> DeriveEcdeYearWeek",
-				"splitDailyFromWeekly@Weekly join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"splitDailyFromWeekly@Weekly, aggDimDate join(reported_year_week == ecdc_year_week,",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
