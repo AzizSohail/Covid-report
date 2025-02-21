@@ -241,18 +241,22 @@
 						"          reported_date as string,",
 						"          source as string",
 						"     ),",
+						"     filePattern:'hospital_admission_weekly',",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> weeklysink",
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> weeklysink",
 						"select1 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     filePattern:'hospital_admitions_daily',",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> dailysink"
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> dailysink"
 					]
 				}
 			},
