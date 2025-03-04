@@ -962,6 +962,53 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Voters_vijayawada')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_adls_ccovidreportingdl",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "Table 1",
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "Vijayawada_eligible.xls",
+						"fileSystem": "baba"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "S.No.",
+						"type": "String"
+					},
+					{
+						"name": "Entr.No.",
+						"type": "String"
+					},
+					{
+						"name": "Advocate Name",
+						"type": "String"
+					},
+					{
+						"name": "Address",
+						"type": "String"
+					},
+					{
+						"name": "Phone No",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_adls_ccovidreportingdl')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/des_processed_hospital_admission_weekly')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1910,6 +1957,23 @@
 				"[concat(variables('factoryId'), '/datasets/des_processed_hospital_admission_weekly')]",
 				"[concat(variables('factoryId'), '/datasets/ds_processed_daily')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [],
+					"sinks": [],
+					"transformations": [],
+					"scriptLines": [
+						""
+					]
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
