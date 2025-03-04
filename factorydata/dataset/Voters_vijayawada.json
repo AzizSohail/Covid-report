@@ -1,0 +1,42 @@
+{
+	"name": "Voters_vijayawada",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_ccovidreportingdl",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Table 1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Vijayawada_eligible.xls",
+				"fileSystem": "baba"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "S.No.",
+				"type": "String"
+			},
+			{
+				"name": "Entr.No.",
+				"type": "String"
+			},
+			{
+				"name": "Advocate Name",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "Phone No",
+				"type": "String"
+			}
+		]
+	}
+}
