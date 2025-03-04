@@ -224,6 +224,87 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Dataflow_baba_req')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "Voters_vijayawada",
+								"type": "DatasetReference"
+							},
+							"name": "voterslist"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "yearWiseSortedData",
+								"type": "DatasetReference"
+							},
+							"name": "yearWiseData"
+						}
+					],
+					"transformations": [
+						{
+							"name": "select1"
+						},
+						{
+							"name": "YearwiseSplit"
+						},
+						{
+							"name": "sort1"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          {S.No.} as string,",
+						"          {Entr.No.} as string,",
+						"          {Advocate Name} as string,",
+						"          Address as string,",
+						"          {Phone No} as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> voterslist",
+						"voterslist select(mapColumn(",
+						"          {S.No.},",
+						"          {Entr.No} = {Entr.No.},",
+						"          year = {Entr.No.},",
+						"          {Advocate Name},",
+						"          Address,",
+						"          {Phone No}",
+						"     ),",
+						"     skipDuplicateMapInputs: false,",
+						"     skipDuplicateMapOutputs: false) ~> select1",
+						"select1 derive(year = split(year,\"/\")[3]) ~> YearwiseSplit",
+						"YearwiseSplit sort(desc(year, true)) ~> sort1",
+						"sort1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     input(",
+						"          country as string,",
+						"          country_code_2_digit as string,",
+						"          country_code_3_digit as string,",
+						"          population as string,",
+						"          cases_count as string,",
+						"          deaths_count as string,",
+						"          reported_date as string,",
+						"          source as string",
+						"     ),",
+						"     umask: 0022,",
+						"     preCommands: [],",
+						"     postCommands: [],",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> yearWiseData"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/df_transfoorm_cases_deaths')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
