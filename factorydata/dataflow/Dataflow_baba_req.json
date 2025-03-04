@@ -67,11 +67,13 @@
 				"          reported_date as string,",
 				"          source as string",
 				"     ),",
-				"     umask: 0022,",
+				"     partitionFileNames:['yearWiseSortedVoterList'],",
+				"     umask: 0000,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> yearWiseData"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> yearWiseData"
 			]
 		}
 	}
